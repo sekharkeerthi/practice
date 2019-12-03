@@ -16,14 +16,14 @@ public class HashMapImpl {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Employee e1 = new Employee(1, "sekhar");
-		Employee e2 = new Employee(1, "sekhar");
+		Emp e1 = new Emp(1, "sekhar");
+		Emp e2 = new Emp(1, "sekhar");
 		
 		System.out.println(e1.hashCode());
 		System.out.println(e2.hashCode());
 		System.out.println(e1.hashCode() == e2.hashCode());
 		
-		Map<Employee, Integer> map = new HashMap<>();
+		Map<Emp, Integer> map = new HashMap<>();
 
 		map.put(e1, 1);
 		map.put(null, 2);

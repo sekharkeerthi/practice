@@ -1,84 +1,63 @@
-/**
- * 
- */
 package com.sk.collections;
 
-/**
- * @author Sekhar Keerthi
- *
- */
-public class Employee {
+import java.util.Comparator;
 
-	private Integer id;
-	private String name;
+public class Employee implements Comparator<Employee> {
+	String name;
+	int age;
 
-	/**
-	 * 
-	 */
-	public Employee(Integer id, String name) {
-		this.id = id;
+	public Employee(String name, int age) {
 		this.name = name;
+		this.age = age;
 	}
 
-	/**
-	 * @return the id
-	 */
-	public Integer getId() {
-		return id;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + age;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
 	}
 
-	/**
-	 * @param id
-	 *            the id to set
-	 */
-	public void setId(Integer id) {
-		this.id = id;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (age != other.age)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
 	}
 
-	/**
-	 * @return the name
-	 */
 	public String getName() {
 		return name;
 	}
 
-	/**
-	 * @param name
-	 *            the name to set
-	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
-	@Override
-	public int hashCode() {
-		return 31 * (id.hashCode()) + (name.hashCode());
+	public int getAge() {
+		return age;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
-	@Override
-	public boolean equals(Object obj) {
-		if (obj instanceof Employee) {
-			Employee emp = (Employee) obj;
-			return id.equals(emp.getId()) && name.equalsIgnoreCase(emp.getName());
-		}
-		return false;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
+
 	@Override
-	public String toString() {
-		return "Emp Id:" + id + " Name:" + name;
+	public int compare(Employee o1, Employee o2) {
+
+		return o1.age - o2.age;
 	}
 }
