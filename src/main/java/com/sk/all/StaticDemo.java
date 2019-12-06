@@ -26,13 +26,18 @@ public class StaticDemo {
 		System.out.println(s);
 		System.out.println(new SimpleDateFormat("MM/dd/yyyy").parse(s));
 
-		/*
-		 * // System.out.println(args[0]); String empty = "";
-		 * System.out.println(empty.hashCode()); String s = 40 + 30 + "abc" + 40 + 30;
-		 * System.out.println(40 + 30); System.out.println(s); StaticDemo sd = null;
-		 * System.out.println(sd.i); sd = new StaticDemo(); System.out.println(sd.j);
-		 * int z;
-		 */
+		System.out.println(args[0]);
+		String empty = "";
+		System.out.println(empty.hashCode());
+		String scat = 40 + 30 + "abc" + 40 + 30;
+		System.out.println(40 + 30);
+		System.out.println(scat);
+		StaticDemo sd = null;
+		System.out.println(sd.i);
+		sd = new StaticDemo();
+		System.out.println(sd.j);
+		int z;
+
 	}
 
 }
