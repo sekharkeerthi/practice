@@ -53,5 +53,5 @@ public class A extends Thread {
 }
 
 interface SK {
-	void check();
+	void check();   
 }
