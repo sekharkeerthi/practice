@@ -14,6 +14,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.sql.rowset.JdbcRowSet;
+import javax.sql.rowset.RowSetProvider;
+
 public class JDBCDemo {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
@@ -60,6 +63,8 @@ public class JDBCDemo {
 
 		int i = ps.executeUpdate();
 		System.out.println(i + " records affected");
+		
+		JdbcRowSet rowSet = RowSetProvider.newFactory().createJdbcRowSet();  
 
 	}
 
