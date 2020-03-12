@@ -32,7 +32,7 @@ public class LinearSearch_POJOTest {
 	@Before
 	public void setup() {
 		searchPojo = new LinearSearch<>();
-		elements = new ArrayList<>() {
+		elements = new ArrayList<DemoPOJO>() {
 			{
 				add(new DemoPOJO(1, "Sekh"));
 				add(new DemoPOJO(2, "Zheng"));
