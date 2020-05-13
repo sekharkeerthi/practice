@@ -27,7 +27,6 @@ public class A extends Thread {
 	public static void main(int[] args) {
 		A a = new A();
 		a.m1();
-		A a1 = new A();
 		a.m1();
 
 		SK sk = new SK() {
@@ -47,9 +46,6 @@ public class A extends Thread {
 		return j;
 	}
 
-	private class B {
-
-	}
 }
 
 interface SK {

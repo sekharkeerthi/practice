@@ -15,7 +15,7 @@ class ChainedException {
 		try {
 			foo();
 		} catch (Exception re) {
-			System.out.println(re.getClass());
+			//System.out.println(re.getClass());
 		}
 	}
 }
