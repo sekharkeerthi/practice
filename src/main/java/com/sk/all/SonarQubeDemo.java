@@ -8,6 +8,8 @@ public class SonarQubeDemo {
 			System.out.println("It is zero");
 		} else if (x == 1) {
 			System.out.println("It is one");
+		} else if (x == 2) {
+			System.out.println("It is two");
 		}
 	}
 }
