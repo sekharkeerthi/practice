@@ -59,12 +59,12 @@ public class Singleton_Reflection {
 
 		try {
 			Singleton instance3 = Singleton.getInstance();
-			ObjectOutput out = new ObjectOutputStream(new FileOutputStream("d://file.txt"));
+			ObjectOutput out = new ObjectOutputStream(new FileOutputStream("E:\\Workspace\\practice\\src\\main\\resources\\file.text"));
 			out.writeObject(instance3);
 			out.close();
 
 			// deserailize from file to object
-			ObjectInput in = new ObjectInputStream(new FileInputStream("d://file.txt"));
+			ObjectInput in = new ObjectInputStream(new FileInputStream("E:\\Workspace\\\\practice\\\\src\\\\main\\\\resources\\\\file.text"));
 
 			Singleton instance4 = (Singleton) in.readObject();
 			in.close();

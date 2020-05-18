@@ -1,31 +1,29 @@
 package com.sk.io;
 
-import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
+import com.sk.all.Employee;
 
 public class SerializationDemo {
 	public static void main(String[] args) {
-		Employee emp = null;
+		Employee emp = new Employee();
+		emp.firstName = "Vivekanand";
+		emp.lastName = "Gautam";
+		emp.companyName = "JBT";
+		// Below part needs to be removed in case address field is made final
+		emp.address = "MUM";
+		emp.companyCEO = "ME CEO";
 		try {
-			FileInputStream fileIn = new FileInputStream("./employee.txt");
-			ObjectInputStream in = new ObjectInputStream(fileIn);
-			emp = (Employee) in.readObject();
-			in.close();
-			fileIn.close();
+			FileOutputStream fileOut = new FileOutputStream("./employee.txt");
+			ObjectOutputStream out = new ObjectOutputStream(fileOut);
+			out.writeObject(emp);
+			out.close();
+			fileOut.close();
+			System.out.printf("Serialized data is saved in ./employee.txt file");
 		} catch (IOException i) {
 			i.printStackTrace();
-			return;
-		} catch (ClassNotFoundException c) {
-			System.out.println("Employee class not found");
-			c.printStackTrace();
-			return;
 		}
-		System.out.println("First Name of Employee: " + emp.firstName);
-		System.out.println("Last Name of Employee: " + emp.lastName);
-		System.out.println("Company Name: " + emp.companyName);
-		System.out.println("Company CEO: " + emp.companyCEO);
-		System.out.println("Company Address: " + emp.address);
 	}
 }
