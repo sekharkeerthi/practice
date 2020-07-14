@@ -12,9 +12,11 @@ public class Thread2 implements Runnable {
 
 	/**
 	 * @param args
+	 * @throws InterruptedException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Thread t =new Thread(new Thread2());
+		Thread.sleep(1000000L);
 		t.start();
 		System.out.println("end");
 

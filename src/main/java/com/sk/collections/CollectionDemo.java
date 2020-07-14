@@ -1,6 +1,7 @@
 package com.sk.collections;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class CollectionDemo {
 	public static void main(String[] args) {
@@ -29,6 +30,9 @@ public class CollectionDemo {
 		hs.add("1");
 		
 		System.out.println(hs);
-		
+		Iterator<String> it = hs.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
 	}
 }

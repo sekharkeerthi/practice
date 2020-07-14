@@ -2,7 +2,7 @@ package com.sk.collections;
 
 import java.util.Comparator;
 
-public class Employee implements Comparator<Employee> {
+public class Employee implements /* Comparator<Employee>, */ Comparable<Employee> {
 	String name;
 	int age;
 
@@ -55,9 +55,21 @@ public class Employee implements Comparator<Employee> {
 		this.age = age;
 	}
 
-	@Override
-	public int compare(Employee o1, Employee o2) {
+	/*
+	 * @Override public int compare(Employee o1, Employee o2) {
+	 * 
+	 * return o1.age - o2.age; }
+	 */
 
-		return o1.age - o2.age;
+	@Override
+	public int compareTo(Employee emp) {
+		return Comparator.comparing(Employee::getAge)
+	              .thenComparing(Employee::getName)
+	              .compare(this, emp);
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [name=" + name + ", age=" + age + "]";
 	}
 }

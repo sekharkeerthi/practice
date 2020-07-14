@@ -57,7 +57,7 @@ public class Emp {
 	 */
 	@Override
 	public int hashCode() {
-		return 31 * (id.hashCode()) + (name.hashCode());
+		return 31 * /* (id.hashCode()) + */ (name.hashCode());
 	}
 
 	/*
@@ -69,7 +69,7 @@ public class Emp {
 	public boolean equals(Object obj) {
 		if (obj instanceof Emp) {
 			Emp emp = (Emp) obj;
-			return id.equals(emp.getId()) && name.equalsIgnoreCase(emp.getName());
+			return /* id.equals(emp.getId()) && */ name.equalsIgnoreCase(emp.getName());
 		}
 		return false;
 	}

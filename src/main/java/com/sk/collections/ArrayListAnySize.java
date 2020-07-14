@@ -1,6 +1,7 @@
 package com.sk.collections;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class ArrayListAnySize<E> extends ArrayList<E> {
@@ -30,5 +31,18 @@ public class ArrayListAnySize<E> extends ArrayList<E> {
 		for (int i = 0; i < a.size(); i++) {
 			System.out.println(i + ": " + a.get(i));
 		}
+
+		List<String> list = new ArrayList<>();
+		list.add("a");
+		list.add(1, "c");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i + ": " + list.get(i));
+		}
+		
+		list.iterator().forEachRemaining(System.out::println);
+		
+		list.spliterator().forEachRemaining(System.out::println);
+		
+		list.parallelStream().forEach(System.out::println);
 	}
 }
