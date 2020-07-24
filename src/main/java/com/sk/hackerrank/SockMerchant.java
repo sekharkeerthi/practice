@@ -58,7 +58,7 @@ public class SockMerchant {
 		 * for (int i = 0; i < n; i++) { int arItem = Integer.parseInt(arItems[i]);
 		 * ar[i] = arItem; }
 		 */
-		int ar[] = new int[] { -10, 10, 20, 20, 10, 10, 30, 50, 10, 20, 30, 50 };
+		int ar[] = new int[] { 1,2,1,2,1,3,2 };
 		int length = ar.length;
 		int result = sockMerchant(length, ar);
 		System.out.println(result);

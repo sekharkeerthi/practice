@@ -13,9 +13,9 @@ public class RunnableLambda {
 			}
 		};
 
-		/*
-		 * Thread thread = new Thread(runnable); thread.start(); thread.join();
-		 */
+		Thread thread = new Thread(runnable);
+		thread.start();
+		//thread.join();
 
 		Runnable runnable2 = () -> {
 			for (int i = 0; i < 3; i++) {
@@ -23,8 +23,14 @@ public class RunnableLambda {
 			}
 		};
 
-		Thread thread = new Thread(runnable2);
-		thread.start();
-		thread.join();
+		Thread thread1 = new Thread(runnable2);
+		thread1.start();
+		//thread1.join();
+
+		Runnable runnable3 = () -> System.out.println("Hello :" + Thread.currentThread().getName());
+
+		Thread thread2 = new Thread(runnable3);
+		thread2.start();
+		//thread2.join();
 	}
 }

@@ -6,7 +6,9 @@ package com.sk.collections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
@@ -24,7 +26,7 @@ public class ComparableImpl {
 			{
 				add("ss");
 				add("a");
-				add("yss");
+				add("yss44564565656456456456456456456456sfgsfdgsfgsdfgsdfgsfgsdfgsdfgsdffgsdfgsdfgsdfgsdfgsdfgsdfgsdfg");
 			}
 		};
 
@@ -35,7 +37,11 @@ public class ComparableImpl {
 		Comparator<String> com = (String s1, String s2) -> Integer.compare(s2.length(), s1.length());
 		Collections.sort(list, com);
 		System.out.println(list);
-
+		
+		Map<String, Integer> map = new HashMap<>();
+		map.put("yss44564565656456456456456456456456sfgsfdgsfgsdfgsdfgsfgsdfgsdfgsdffgsdfgsdfgsdfgsdfgsdfgsdfgsdfg", 1);
+		System.out.println(map);
+		
 		List<Employee> empList = new ArrayList<Employee>() {
 			{
 				add(new Employee("Sai", 23));

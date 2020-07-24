@@ -10,6 +10,9 @@ import java.util.stream.IntStream;
 import org.junit.Before;
 import org.junit.Test;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class LinearSearch_IntegerTest {
 
 	private List<Integer> elements;
@@ -17,6 +20,7 @@ public class LinearSearch_IntegerTest {
 
 	@Test
 	public void linearSearch_Integer() {
+		log.debug("Testing linearSearch_Integer....");
 		Integer found = searchInt.findItem(elements, 30);
 		assertNotNull(found);
 		assertEquals(30, found.intValue());
