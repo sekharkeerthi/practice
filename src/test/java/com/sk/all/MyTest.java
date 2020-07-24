@@ -5,10 +5,14 @@ import static org.junit.Assert.*;
 import org.junit.Assume;
 import org.junit.Test;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class MyTest {
 
 	@Test
 	public void test() {
+		log.debug("MyTest test() started");
 		//fail("Not yet implemented");
 		assertTrue("Success", true);
 		assertFalse("Fail", false);
