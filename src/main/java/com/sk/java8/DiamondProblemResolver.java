@@ -16,7 +16,9 @@ public class DiamondProblemResolver implements DiamondProblem2, DiamondProblem1 
 
 	@Override
 	public void diamond() {
+		DiamondProblem1.super.diamond();
 		DiamondProblem2.super.diamond();
+		System.out.println("DiamondProblemResolver diamond()");
 	}
 
 }

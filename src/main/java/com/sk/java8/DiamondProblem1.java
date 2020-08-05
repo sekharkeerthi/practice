@@ -12,4 +12,7 @@ public interface DiamondProblem1 {
 	default public void diamond() {
 		System.out.println("DiamondProblem1");
 	}
+	
+	@Override
+	String toString();
 }

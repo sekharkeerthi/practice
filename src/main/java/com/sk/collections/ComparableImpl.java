@@ -84,22 +84,33 @@ public class ComparableImpl {
 		};
 		System.out.println(customerList);
 		List<Customer> finalList = customerList.stream()
-				// operators to remove duplicates based on person name
+//				 operators to remove duplicates based on person name
 				.collect(Collectors.groupingBy(Customer::getFirstName)).values().stream()
-				// cut short the groups to size of 1
+//				 cut short the groups to size of 1
 				.flatMap(customers -> customers.stream().limit(1))
-				// collect distinct users as list
+//				 collect distinct users as list
 				.sorted(Comparator.comparing(Customer::getFirstName).thenComparing(Customer::getLaastName))
 				.collect(Collectors.toList());
 		System.out.println(finalList);
 
 		List<Customer> distinctCustomers = customerList.stream()
 				.collect(Collectors.collectingAndThen(
-						Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(Customer::getLaastName))),
+						Collectors.toCollection(() -> new TreeSet<>(
+								Comparator.comparing(Customer::getFirstName).thenComparing(Customer::getLaastName))),
 						ArrayList::new))
 				.stream().sorted(Comparator.comparing(Customer::getFirstName).thenComparing(Customer::getLaastName))
 				.collect(Collectors.toList());
 		System.out.println(distinctCustomers);
+		
+		List<Customer> distinctCustomersByMe = customerList.stream()
+				.collect(Collectors.collectingAndThen(
+						Collectors.toCollection(() -> new TreeSet<>(
+								Comparator.comparing(Customer::getFirstName).thenComparing(Customer::getLaastName))),
+						ArrayList::new))
+				.stream().sorted(Comparator.comparing(Customer::getFirstName).thenComparing(Customer::getLaastName))
+				.collect(Collectors.toList());
+		
+		System.out.println(distinctCustomersByMe);
 	}
 
 }

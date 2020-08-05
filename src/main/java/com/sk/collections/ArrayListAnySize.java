@@ -38,11 +38,11 @@ public class ArrayListAnySize<E> extends ArrayList<E> {
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(i + ": " + list.get(i));
 		}
-		
+		System.out.println("----------------");
 		list.iterator().forEachRemaining(System.out::println);
-		
+		System.out.println("----------------");
 		list.spliterator().forEachRemaining(System.out::println);
-		
+		System.out.println("----------------");
 		list.parallelStream().forEach(System.out::println);
 	}
 }

@@ -6,6 +6,7 @@ package com.sk.java8;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -23,10 +24,34 @@ public class FlatMapExample {
 		System.out.println(list);
 
 		Function<List<?>, Integer> function = List::size;
-		Function<List<String>, Stream<String>> flatMapper = l -> l.stream();
+		Function<List<String>, Stream<String>> flatMapper = l -> l.stream(); // List::stream
 
 		// list.stream().map(function).forEach(System.out::println);
-		list.stream().map(flatMapper).forEach(System.out::println);
-		list.stream().flatMap(flatMapper).forEach(System.out::println);
+		list.stream().map(flatMapper).forEach(System.out::print);
+		System.out.println("--------------------------------------------");
+		list.stream().flatMap(flatMapper).forEach(System.out::print);
+		
+		
+		
+		List<List<String>> Names = Arrays.asList(Arrays.asList("Saket", "Trevor"), Arrays.asList("John", "Michael"),
+				Arrays.asList("Shawn", "Franklin"), Arrays.asList("Johnty", "Sean"));
+
+		/*
+		 * Created a “List of List of type String” i.e. List<List<String>> Stored names
+		 * into the list
+		 */
+		System.out.println("--------------------------------------------");
+		List<String> Start = Names.stream().flatMap(List::stream).filter(s -> s.startsWith("S"))
+				.collect(Collectors.toList());
+
+		/*
+		 * Converted it into Stream and filtered out the names which start with 'S'
+		 */
+
+		Start.forEach(System.out::println);
+
+		/*
+		 * Printed the Start using forEach operation
+		 */
 	}
 }

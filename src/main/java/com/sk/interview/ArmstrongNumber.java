@@ -8,10 +8,12 @@ public class ArmstrongNumber {
 		while (num != 0) {
 			rem = num % 10;
 			num /= 10;
-			sum = sum + (int) Math.pow(rem, 3);
+			sum = sum + (rem * rem * rem);//(int) Math.pow(rem, 3);
 		}
 		if (originalNum == sum) {
 			System.out.println("Armstrong Number");
+		} else {
+			System.out.println("Not a Armstrong Number");
 		}
 
 	}

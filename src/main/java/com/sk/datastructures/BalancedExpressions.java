@@ -6,7 +6,7 @@ public class BalancedExpressions {
 
 	public static void main(String[] args) {
 
-		String inputExpression = "{[()]()}";
+		String inputExpression = "{[({)]()}}";
 		System.out.println(isBalancedExpression(inputExpression));
 
 	}
