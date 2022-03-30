@@ -26,15 +26,18 @@ public class FlatMapExample {
 		Function<List<?>, Integer> function = List::size;
 		Function<List<String>, Stream<String>> flatMapper = l -> l.stream(); // List::stream
 
-		// list.stream().map(function).forEach(System.out::println);
-		list.stream().map(flatMapper).forEach(System.out::print);
+		//list.stream().map(l -> l).forEach(System.out::println);
+		list.stream().flatMap(l -> l.stream()).forEach(System.out::println);
 		System.out.println("--------------------------------------------");
 		list.stream().flatMap(flatMapper).forEach(System.out::print);
+		System.out.println();
 		
 		
 		
 		List<List<String>> Names = Arrays.asList(Arrays.asList("Saket", "Trevor"), Arrays.asList("John", "Michael"),
 				Arrays.asList("Shawn", "Franklin"), Arrays.asList("Johnty", "Sean"));
+		
+		System.out.println(Names);
 
 		/*
 		 * Created a “List of List of type String” i.e. List<List<String>> Stored names
@@ -49,6 +52,7 @@ public class FlatMapExample {
 		 */
 
 		Start.forEach(System.out::println);
+		System.out.println(Start);
 
 		/*
 		 * Printed the Start using forEach operation
